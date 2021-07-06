@@ -21,32 +21,12 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const filterContacts = (contacts, filter) => {
-  const normalizedContactSnippet = filter.toLowerCase();
-  return contacts.filter(({ name }) =>
-    name.toLowerCase().includes(normalizedContactSnippet)
-  );
-};
-
 const mapStateToProps = ({ phoneBook }) => ({
   filter: phoneBook.filter,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   onChange: (e) => dispatch(actions.changeFilter(e.target.value)),
 });
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Filter);
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
-
-//   changeFilter = (e) => {
-//     this.setState({ filter: e.target.value });
-//     this.filterContacts();
-//   };
-
-//   filterContacts = () => {
-//     const { contacts, filter } = this.state;
-//     const normalizedContactSnippet = filter.toLowerCase();
-//     return contacts.filter(({ name }) =>
-//       name.toLowerCase().includes(normalizedContactSnippet)
-//     );
-//   };

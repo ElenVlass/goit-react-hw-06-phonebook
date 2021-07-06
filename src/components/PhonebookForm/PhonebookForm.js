@@ -30,7 +30,10 @@ class PhonebookForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state);
+    this.isNameExist()
+      ? alert("This contact already exist")
+      : this.props.onSubmit(this.state);
+
     this.resetFormField();
   };
 
@@ -40,6 +43,12 @@ class PhonebookForm extends Component {
       number: "",
     });
   }
+
+  isNameExist = () => {
+    const { allContacts } = this.props;
+    const { name } = this.state;
+    return allContacts.find((contact) => contact.name === name);
+  };
 
   render() {
     const { name, number } = this.state;
@@ -84,8 +93,12 @@ class PhonebookForm extends Component {
   }
 }
 
+const mapStateToProps = ({ phoneBook: { contacts } }) => ({
+  allContacts: contacts,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   onSubmit: (contact) => dispatch(actions.addContact(contact)),
 });
 
-export default connect(null, mapDispatchToProps)(PhonebookForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PhonebookForm);

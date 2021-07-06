@@ -12,9 +12,6 @@ const contacts = (state = initialContacts, { type, payload }) => {
   switch (type) {
     case types.ADD:
       return [...state, payload];
-    // return state.find((contact) => contact.name === payload.name)
-    //     ? alert("This contact already exist")
-    //     : [...state, payload];
 
     case types.DELETE:
       return state.filter((contact) => contact.id !== payload);
@@ -37,34 +34,4 @@ const filter = (state = "", { type, payload }) => {
   }
 };
 
-//   changeFilter = (e) => {
-//     this.setState({ filter: e.target.value });
-//     this.filterContacts();
-//   };
-
-//   filterContacts = () => {
-//     const { contacts, filter } = this.state;
-//     const normalizedContactSnippet = filter.toLowerCase();
-//     return contacts.filter(({ name }) =>
-//       name.toLowerCase().includes(normalizedContactSnippet)
-//     );
-//   };
-
-// const form = (state = {name: "", number: ""}, {type, payload}) => ()
-
 export default combineReducers({ contacts, filter });
-
-// addContact = (newContact) => {
-//     const { contacts } = this.state;
-//     const contact = {
-//       id: uuidv4(),
-//       name: newContact.name,
-//       number: newContact.number,
-//     };
-
-//     contacts.find(({ name }) => name === newContact.name)
-//       ? alert("This contact already exist")
-//       : this.setState(({ contacts }) => ({
-//           contacts: [contact, ...contacts],
-//         }));
-//   };
