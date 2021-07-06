@@ -1,50 +1,53 @@
-import { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styles from "./ContactList.module.scss";
+import * as actions from "../../redux/phoneBook-actions";
 
-class ContactList extends Component {
-  static defaultProps = {
-    onDelete: () => null,
-    children: null,
-  };
+const ContactList = ({ list, onDelete, allysProps, children }) => (
+  <ul className={styles.list}>
+    {list.map(({ id, name, number }) => (
+      <li key={id} className={styles.item}>
+        <span className={styles.name}>
+          {name}: {number}
+        </span>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={() => onDelete(id)}
+          {...allysProps}
+        >
+          {children}
+          <span className={styles.span}>Delete</span>
+        </button>
+      </li>
+    ))}
+  </ul>
+);
 
-  static propTypes = {
-    list: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        number: PropTypes.string.isRequired,
-      })
-    ),
-    onDelete: PropTypes.func,
-    children: PropTypes.node,
-    "aria-label": PropTypes.string.isRequired,
-  };
+ContactList.defaultProps = {
+  onDelete: () => null,
+  children: null,
+};
 
-  render() {
-    const { list, onDelete } = this.props;
+ContactList.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  onDelete: PropTypes.func,
+  children: PropTypes.node,
+  "aria-label": PropTypes.string.isRequired,
+};
 
-    return (
-      <ul className={styles.list}>
-        {list.map(({ id, name, number }) => (
-          <li key={id} className={styles.item}>
-            <span className={styles.name}>
-              {name}: {number}
-            </span>
-            <button
-              className={styles.button}
-              type="button"
-              onClick={() => onDelete(id)}
-              {...this.props.allysProps}
-            >
-              {this.props.children}
-              <span className={styles.span}>Delete</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  list: state.phoneBook.contacts,
+});
+const mapDispatchToProps = (dispatch) => ({
+  onDelete: (id) => dispatch(actions.deleteContact(id)),
+});
 
-export default ContactList;
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
