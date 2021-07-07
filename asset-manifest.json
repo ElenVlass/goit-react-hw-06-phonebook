@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/goit-react-hw-06-phonebook/static/css/main.fabbc711.chunk.css",
-    "main.js": "/goit-react-hw-06-phonebook/static/js/main.098d1c10.chunk.js",
-    "main.js.map": "/goit-react-hw-06-phonebook/static/js/main.098d1c10.chunk.js.map",
+    "main.js": "/goit-react-hw-06-phonebook/static/js/main.72a17a3c.chunk.js",
+    "main.js.map": "/goit-react-hw-06-phonebook/static/js/main.72a17a3c.chunk.js.map",
     "runtime-main.js": "/goit-react-hw-06-phonebook/static/js/runtime-main.2b36aa1d.js",
     "runtime-main.js.map": "/goit-react-hw-06-phonebook/static/js/runtime-main.2b36aa1d.js.map",
     "static/css/2.bc922b9c.chunk.css": "/goit-react-hw-06-phonebook/static/css/2.bc922b9c.chunk.css",
-    "static/js/2.0fb9a511.chunk.js": "/goit-react-hw-06-phonebook/static/js/2.0fb9a511.chunk.js",
-    "static/js/2.0fb9a511.chunk.js.map": "/goit-react-hw-06-phonebook/static/js/2.0fb9a511.chunk.js.map",
+    "static/js/2.dba8e6cf.chunk.js": "/goit-react-hw-06-phonebook/static/js/2.dba8e6cf.chunk.js",
+    "static/js/2.dba8e6cf.chunk.js.map": "/goit-react-hw-06-phonebook/static/js/2.dba8e6cf.chunk.js.map",
     "index.html": "/goit-react-hw-06-phonebook/index.html",
     "static/css/2.bc922b9c.chunk.css.map": "/goit-react-hw-06-phonebook/static/css/2.bc922b9c.chunk.css.map",
     "static/css/main.fabbc711.chunk.css.map": "/goit-react-hw-06-phonebook/static/css/main.fabbc711.chunk.css.map",
-    "static/js/2.0fb9a511.chunk.js.LICENSE.txt": "/goit-react-hw-06-phonebook/static/js/2.0fb9a511.chunk.js.LICENSE.txt",
+    "static/js/2.dba8e6cf.chunk.js.LICENSE.txt": "/goit-react-hw-06-phonebook/static/js/2.dba8e6cf.chunk.js.LICENSE.txt",
     "static/media/ContactList.module.scss": "/goit-react-hw-06-phonebook/static/media/person.59719f15.svg",
     "static/media/user-minus.5c6c5cfd.svg": "/goit-react-hw-06-phonebook/static/media/user-minus.5c6c5cfd.svg",
     "static/media/user-plus.29f551d0.svg": "/goit-react-hw-06-phonebook/static/media/user-plus.29f551d0.svg"
@@ -19,8 +19,8 @@
   "entrypoints": [
     "static/js/runtime-main.2b36aa1d.js",
     "static/css/2.bc922b9c.chunk.css",
-    "static/js/2.0fb9a511.chunk.js",
+    "static/js/2.dba8e6cf.chunk.js",
     "static/css/main.fabbc711.chunk.css",
-    "static/js/main.098d1c10.chunk.js"
+    "static/js/main.72a17a3c.chunk.js"
   ]
 }
