@@ -8,21 +8,6 @@ import { ReactComponent as AddContactIcon } from "./icons/user-plus.svg";
 import { ReactComponent as DeleteContactIcon } from "./icons/user-minus.svg";
 
 class App extends Component {
-  // componentDidMount() {
-  //   const contacts = localStorage.getItem("my-contacts");
-  //   const parsedContacts = JSON.parse(contacts);
-  //   parsedContacts && this.setState({ contacts: parsedContacts });
-  // }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log("componentDidUpdate");
-  //   const newContacts = this.state.contacts;
-  //   const prevContacts = prevState.contacts;
-  //   if (newContacts !== prevContacts) {
-  //     localStorage.setItem("my-contacts", JSON.stringify(newContacts));
-  //   }
-  // }
-
   render() {
     return (
       <Container>

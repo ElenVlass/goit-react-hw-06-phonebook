@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styles from "./ContactList.module.scss";
-import * as actions from "../../redux/phoneBook-actions";
 
 const ContactList = ({ list, onDelete, allysProps, children }) => (
   <ul className={styles.list}>
@@ -43,22 +41,4 @@ ContactList.propTypes = {
   "aria-label": PropTypes.string.isRequired,
 };
 
-const specifyContacts = (allContacts, filter) => {
-  const normalizedContactSnippet = filter.toLowerCase();
-
-  return allContacts.filter(({ name }) =>
-    name.toLowerCase().includes(normalizedContactSnippet)
-  );
-};
-
-const mapStateToProps = (state) => {
-  const { contacts, filter } = state.phoneBook;
-
-  return { list: specifyContacts(contacts, filter) };
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  onDelete: (id) => dispatch(actions.deleteContact(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactList);
+export default ContactList;
